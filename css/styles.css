@@ -134,6 +134,8 @@ main {
   position: relative;
 }
 
+/* responsive */
+
 @media (min-width: 600px) {
   nav {
     display: block;
