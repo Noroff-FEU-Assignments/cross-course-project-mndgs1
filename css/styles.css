@@ -1,0 +1,151 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("https://fonts.googleapis.com/css2?family=Poppins&display=swap") format("truetype");
+}
+
+/* Shared */
+
+body {
+  font-family: proxima-nova, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8em;
+  padding-top: 30px;
+  margin: 0;
+}
+
+.welcome {
+  margin: 0px 20px;
+}
+.cta {
+  display: inline-block;
+  color: #fff;
+  border-width: 3px;
+  border-style: solid;
+  text-transform: uppercase;
+  padding: 2px 26px;
+  border-radius: 11px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Poppins";
+  text-align: center;
+}
+
+.cta:hover {
+  color: #10171a;
+  background-color: #fff;
+}
+
+.icons {
+  display: inline-block;
+}
+
+header {
+  height: 40px;
+  margin: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo {
+  display: inline-block;
+  height: 100%;
+}
+
+header .icons {
+  height: 28px;
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+.fa-bars {
+  color: #113340;
+  margin-right: 10px;
+}
+#hamburger-menu:checked ~ nav {
+  display: block;
+}
+
+nav {
+  margin-left: 25px;
+  display: none;
+  position: fixed;
+  top: 48px;
+  background: #cfcfcf;
+  z-index: 1000;
+  right: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: #113340;
+}
+
+.active {
+  text-decoration: underline;
+}
+nav ul {
+  padding: 0px;
+  margin: 0px 10px;
+}
+
+nav li {
+  display: block;
+}
+
+nav a {
+  display: block;
+  padding: 10px 15px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+footer a {
+  margin-left: px;
+}
+footer p {
+  font-size: 0.7em;
+  margin: 0px;
+  display: inline-block;
+}
+
+/* home */
+main {
+  background-image: url("/images/Background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+@media (min-width: 600px) {
+  nav {
+    display: block;
+    position: static;
+    background: none;
+  }
+
+  nav li {
+    display: inline-block;
+  }
+
+  header label {
+    display: none;
+  }
+}
