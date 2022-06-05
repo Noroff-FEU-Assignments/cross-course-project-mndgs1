@@ -150,4 +150,16 @@ main {
   header label {
     display: none;
   }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  .cta {
+    font-size: 24px;
+  }
 }
