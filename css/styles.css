@@ -126,13 +126,15 @@ footer p {
 }
 
 /* home */
-main {
+.home main {
   background-image: url("/images/Background.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
+
+/* jackets */
 
 /* responsive */
 
