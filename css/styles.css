@@ -1,10 +1,9 @@
 @font-face {
   font-family: "Poppins";
-  src: url("https://fonts.googleapis.com/css2?family=Poppins&display=swap") format("truetype");
+  src: url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap") format("truetype");
 }
 
 /* Shared */
-
 body {
   font-family: proxima-nova, sans-serif;
   font-weight: 400;
@@ -18,12 +17,11 @@ body {
 h1 {
   font-family: "Poppins", sans-serif;
   font-size: 1.8em;
-  padding-top: 30px;
   margin: 0;
 }
 
 .welcome {
-  margin: 0px 20px;
+  margin: 30px 20px;
 }
 .cta {
   display: inline-block;
@@ -49,8 +47,8 @@ h1 {
 }
 
 header {
-  height: 40px;
-  margin: 4px;
+  height: 50px;
+  margin: 4px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -71,7 +69,6 @@ header .icons {
 
 .fa-bars {
   color: #113340;
-  margin-right: 10px;
 }
 #hamburger-menu:checked ~ nav {
   display: block;
@@ -125,8 +122,58 @@ footer p {
   display: inline-block;
 }
 
+/* cart */
+main {
+  margin: 20px;
+}
+h1 {
+}
+.cart_product-list {
+  display: grid;
+  margin-top: 20px;
+}
+
+.cart_product-card {
+  border-bottom: 1px solid #10171a;
+  margin-bottom: 10px;
+}
+
+.cart_product-card a {
+  display: inline-block;
+  font-size: 0.8em;
+}
+.cart_product-card a:hover {
+}
+.cart_product-card img {
+  height: 200px;
+  float: left;
+  padding: 0 10px 10px 0px;
+}
+
+.cart_price {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  font-size: 0.8em;
+  text-align: right;
+  gap: 10px;
+}
+
+.cart_price p {
+  margin: 1px;
+}
+
+h2 {
+  font-size: 1em;
+}
+h2,
+p,
+a {
+  font-family: "Poppins", sans-serif;
+}
+
 /* home */
 .home main {
+  margin: 0px;
   background-image: url("/images/Background.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -135,7 +182,6 @@ footer p {
 }
 
 /* jackets */
-
 /* responsive */
 
 @media (min-width: 600px) {
