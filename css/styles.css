@@ -55,7 +55,7 @@ label {
   color: #113340;
   background-color: #ffd300;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  max-width: 120px;
+  max-width: 130px;
   margin: 25px auto;
 }
 
@@ -187,7 +187,8 @@ footer p {
   gap: 10px;
 }
 
-.input-box input {
+.input-box input,
+.input-box textarea {
   display: block;
   height: 2.6em;
   align-content: center;
