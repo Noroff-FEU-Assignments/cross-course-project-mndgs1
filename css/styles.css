@@ -121,6 +121,7 @@ nav li {
 nav a {
   display: block;
   padding: 10px 15px;
+  font-size: 0.9em;
 }
 
 footer {
@@ -141,7 +142,8 @@ footer p {
 
 /* cart */
 
-.cart_product-card p {
+.cart_product-card p,
+.product p {
   font-weight: 200;
 }
 
@@ -150,7 +152,8 @@ footer p {
   margin-top: 20px;
 }
 
-.cart_product-card {
+.cart_product-card,
+.product {
   border-bottom: 1px solid #10171a;
   margin-bottom: 10px;
 }
@@ -181,42 +184,50 @@ footer p {
   text-decoration: underline;
 }
 
-.shipping-info {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-}
-
 .input-box input,
 .input-box textarea {
   display: block;
   height: 2.6em;
-  align-content: center;
   padding: 0 1em;
   font-size: 0.875em;
   line-height: 1;
   border-radius: 5px;
   border-width: 1px;
   border-color: #113340;
+  width: 100%;
+  box-sizing: border-box;
 }
+
+.input-box textarea {
+  height: 200px;
+}
+.input-box_container {
+  max-width: 400px;
+  margin: auto;
+}
+
+/* .input-box_small {
+  float: left;
+  width: 50%;
+} */
 
 /* home */
 .home main {
   margin: 0px;
-  background-image: url("/images/Background.jpg");
+  background-image: url("/images/background.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
 
-.cta-home {
+/* .cta-home {
   color: #fff;
   background-color: transparent;
   border-width: 3px;
   border-style: solid;
   margin: 0px;
-}
+} */
 
 .cta-home:hover {
   color: #10171a;
@@ -234,10 +245,31 @@ footer p {
 
 /* jackets */
 
-.product img {
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   width: 100%;
 }
+.product {
+  margin: 20px;
+  text-align: center;
+}
+
+.product-list img {
+  display: block;
+  width: 40vh;
+  height: 50vh;
+  object-fit: cover;
+  margin: auto;
+}
 /* responsive */
+
+@media (min-width: 450px) {
+  /* .product-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  } */
+}
 
 @media (min-width: 600px) {
   nav {
@@ -265,4 +297,8 @@ footer p {
   .cta {
     font-size: 24px;
   }
+
+  /* .product-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  } */
 }
