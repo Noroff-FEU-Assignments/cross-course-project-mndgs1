@@ -63,35 +63,35 @@
             <div class="input-box_container">
               <div class="input-box">
                 <label>E-mail *</label>
-                <input type="email" id="Email" name="Email" placeholder="name@example.com" required="required" spellcheck="false" autocomplete="off" />
+                <input type="email" id="Email" name="Email" placeholder="name@example.com" required="required" autocomplete="on" />
               </div>
               <div class="input-box">
                 <label>First Name *</label>
-                <input type="text" id="First-name" name="First-name" placeholder="E.g. George" spellcheck="false" autocomplete="off" />
+                <input type="text" id="First-name" name="First-name" placeholder="E.g. George" autocomplete="on" />
               </div>
               <div class="input-box">
                 <label>Last Name *</label>
-                <input type="text" id="Last-name" name="Last-name" placeholder="E.g. Washington" required="required" spellcheck="false" autocomplete="off" />
+                <input type="text" id="Last-name" name="Last-name" placeholder="E.g. Washington" required="required" autocomplete="on" />
               </div>
               <div class="input-box">
                 <label>Street and House Number *</label>
-                <input type="text" id="address" name="address" placeholder="E.g. Willow road 22" required="required" spellcheck="false" autocomplete="off" />
+                <input type="text" id="address" name="address" placeholder="E.g. Willow road 22" required="required" autocomplete="on" />
               </div>
               <div class="input-box">
                 <label>Address2/ Company</label>
-                <input type="text" id="address2" name="address2" placeholder="" required="" spellcheck="false" autocomplete="off" />
+                <input type="text" id="address2" name="address2" placeholder="" autocomplete="on" />
               </div>
               <div class="input-box">
                 <label>Postal Code *</label>
-                <input type="text" id="postal-code" name="postal-code" placeholder="E.g. N0-2754" required="required" spellcheck="false" autocomplete="off" />
+                <input type="text" id="postal-code" name="postal-code" placeholder="E.g. N0-2754" required="required" autocomplete="on" />
               </div>
               <div class="input-box">
                 <label>City *</label>
-                <input type="text" id="City" name="City" placeholder="E.g. Oslo" required="required" spellcheck="false" autocomplete="off" />
+                <input type="text" id="City" name="City" placeholder="E.g. Oslo" required="required" autocomplete="on" />
               </div>
               <div class="input-box">
                 <label>Country *</label>
-                <input type="email" id="Email" name="Email" placeholder="name@example.com" required="required" spellcheck="false" autocomplete="off" />
+                <input type="email" id="Email" name="Email" placeholder="name@example.com" required="required" autocomplete="on" />
               </div>
             </div>
           </section>
@@ -100,23 +100,31 @@
             <div class="input-box_container">
               <div class="input-box">
                 <label>Card Number *</label>
-                <input type="text" id="card-number" name="card-number" placeholder="xxxx xxxx xxxx xxxx" required="required" spellcheck="false" autocomplete="off" />
+                <input type="text" id="card-number" name="card-number" placeholder="xxxx xxxx xxxx xxxx" required="required" autocomplete="on" />
               </div>
               <div class="input-box">
                 <label>Expiry Date *</label>
-                <input type="text" id="expiration-date" name="expiration-date" placeholder="01/2001" />
+                <input type="text" id="expiration-date" name="expiration-date" placeholder="01/2001" required="required" autocomplete="on" />
               </div>
               <div class="input-box">
                 <label>CVC / CVV *</label>
-                <input type="text" id="CVC" name="CVC" placeholder="111" required="required" spellcheck="false" autocomplete="off" />
+                <input type="text" id="CVC" name="CVC" placeholder="111" required="required" autocomplete="off" />
               </div>
               <div class="input-box">
                 <label>Cardholders Name *</label>
-                <input type="text" id="name" name="name" placeholder="George Washington" required="required" spellcheck="false" autocomplete="off" />
+                <input type="text" id="name" name="name" placeholder="George Washington" required="required" autocomplete="on" />
               </div>
             </div>
           </section>
-          <a href="?event?" class="cta"> Confirm Order</a>
+          <!-- <a href="?event?" class="cta"> Confirm Order</a> -->
+          <input type="checkbox" id="click" />
+          <label for="click" class="click-me cta">Confirm Order </label>
+          <section class="checkout-success">
+            <p>Your order has been successful!</p>
+            <p>Thank You for Shopping with us!</p>
+            <p>You will receive an e-mail with delivery information shortly</p>
+            <a href="index.html" class="cta">Continue</a>
+          </section>
         </div>
       </div>
     </main>
