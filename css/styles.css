@@ -158,13 +158,9 @@ footer p {
 
 .cart_product-card p,
 .product p,
-.about p {
+.about p,
+.product_price {
   font-weight: 200;
-}
-
-.cart_product-list {
-  display: grid;
-  margin-top: 20px;
 }
 
 .cart_product-card {
@@ -176,6 +172,11 @@ footer p {
   height: 200px;
   float: left;
   padding: 0 10px 10px 0px;
+}
+
+.cart_product-list {
+  display: grid;
+  margin-top: 20px;
 }
 
 .cart_price {
@@ -215,11 +216,6 @@ footer p {
   margin: auto;
 }
 
-/* .input-box_small {
-  float: left;
-  width: 50%;
-} */
-
 /* home */
 .home main {
   margin: 0px;
@@ -230,14 +226,9 @@ footer p {
   position: relative;
 }
 
-.cta-home {
+.welcome .cta {
   margin-left: 0px;
 }
-
-/* .cta-home:hover {
-  color: #10171a;
-  background-color: #fff;
-} */
 
 .welcome h1 {
   font-size: 1.8em;
@@ -286,23 +277,30 @@ footer p {
   width: 100%;
 }
 
-.about figure {
-  margin: 0px;
-}
-
 .about figcaption {
   font-size: 0.8em;
 }
 
+.about figure {
+  max-width: 400px;
+  margin: auto;
+}
 /* product-specific */
 
 .product_price {
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
-.product h2 {
+.product-specific h2 {
   border: none;
 }
+
+.product-specific img {
+  max-height: 65vh;
+  width: 100%;
+  object-fit: contain;
+}
+
 /* responsive */
 
 @media (min-width: 600px) {
@@ -330,7 +328,8 @@ footer p {
 
   h2,
   h3,
-  h4 {
+  h4,
+  .product_price {
     font-size: 1.2em;
   }
 
@@ -349,6 +348,11 @@ footer p {
   .product p {
     font-size: 1em;
   }
+
+  .about figure {
+    float: right;
+    padding-left: 20px;
+  }
   @media (min-width: 800px) {
     .checkout-col1 {
       order: 1;
@@ -358,11 +362,17 @@ footer p {
       grid-template-columns: 1fr 1fr;
       gap: 100px;
     }
+  }
 
+  @media (min-width: 1000px) {
     .product-specific {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 50px;
+    }
+
+    .product-specific img {
+      max-height: 80vh;
     }
   }
 }
