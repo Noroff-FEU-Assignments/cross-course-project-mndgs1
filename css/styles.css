@@ -282,7 +282,12 @@ footer p {
 }
 
 .about figure {
-  max-width: 400px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.about {
+  max-width: 1300px;
   margin: auto;
 }
 /* product-specific */
@@ -349,10 +354,6 @@ footer p {
     font-size: 1em;
   }
 
-  .about figure {
-    float: right;
-    padding-left: 20px;
-  }
   @media (min-width: 800px) {
     .checkout-col1 {
       order: 1;
