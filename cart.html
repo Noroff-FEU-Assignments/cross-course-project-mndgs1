@@ -19,7 +19,7 @@
       <label for="hamburger-menu"><i class="fa-solid fa-bars"></i></label>
       <input type="checkbox" id="hamburger-menu" />
       <nav>
-        <ul>
+        <ul class="navigation">
           <li><a href="index.html">Home</a></li>
           <li><a href="cart.html" class="active">My Cart</a></li>
           <li><a href="jackets.html">Jackets</a></li>
@@ -33,27 +33,28 @@
         <p><a href="index.html">Home</a> / My Cart</p>
       </section>
       <h1>My Cart</h1>
-      <section class="cart_product-list">
-        <div class="cart_product-card">
-          <img src="images/RainyDays_Jacket1.png" alt="Adventure Jacket" />
-          <h3>Adventure Jacket Men</h3>
-          <p>1899kr</p>
-          <a href="?event?" class="cart_delete">Delete</a>
-        </div>
-        <div class="cart_product-card">
-          <img src="images/RainyDays_Jacket3.png" alt="Beta Jacket" />
-          <h3>Beta Jacket Men</h3>
-          <p>1599kr</p>
-          <a href="?event?" class="cart_delete">Delete</a>
-        </div>
-      </section>
-      <section class="cart_price">
-        <p>Shipping:</p>
-        <p class="price">0kr</p>
-        <p>Total:</p>
-        <p class="price">3498kr</p>
-      </section>
-      <a href="check_out.html" class="cta"> Check Out</a>
+        <section class="cart_product-list">
+          <div class="cart_product-card">
+            <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket1.png" alt="Adventure Jacket" /></a>
+            <h3><a href="product.html" class="product-anchor">Adventure Jacket Men</a></h3>
+            <p>1899kr</p>
+            <a href="?event?" class="cart_delete">Delete</a>
+          </div>
+          <div class="cart_product-card">
+            <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket3.png" alt="Beta Jacket" /></a>
+            <h3><a href="product.html" class="product-anchor">Beta Jacket Men</a></h3>
+            <p>1599kr</p>
+            <a href="?event?" class="cart_delete">Delete</a>
+          </div>
+        </section>
+          <section class="cart_price">
+            <p>Shipping:</p>
+            <p class="price">0kr</p>
+            <p>Total:</p>
+            <p class="price">3498kr</p>
+          </section>
+          <a href="check_out.html" class="cta"> Check Out</a>
+      </div>
     </main>
     <footer>
       <p>Rainy Days &copy 2022. All Rights Reserved</p>
