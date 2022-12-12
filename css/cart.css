@@ -1,0 +1,39 @@
+/* cart */
+
+.cart_product-card p,
+.product-specific p,
+.about p,
+.product_price {
+    font-weight: 200;
+}
+
+.cart_product-card {
+    border-bottom: 1px solid #10171a;
+    margin-bottom: 10px;
+}
+
+.cart_product-card img {
+    height: 200px;
+    float: left;
+    padding: 0 10px 10px 0px;
+}
+
+.cart_product-list {
+    display: grid;
+    margin-top: 20px;
+}
+
+.cart_price {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    font-size: 0.8em;
+    text-align: right;
+}
+
+.price {
+    text-align: right;
+    margin-left: 20px;
+}
+.cart_delete {
+    text-decoration: underline;
+}

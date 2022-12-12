@@ -1,0 +1,15 @@
+/* product-specific */
+
+.product_price {
+    font-size: 1em;
+}
+
+.product-specific h2 {
+    border: none;
+}
+
+.product-specific img {
+    max-height: 65vh;
+    width: 100%;
+    object-fit: contain;
+}

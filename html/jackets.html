@@ -6,7 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Rainy Days store jacket list" />
         <title>Jackets | Rainy Days</title>
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
+        <link href="../css/jackets.css" rel="stylesheet" />
+        <link href="../css/media.css" rel="stylesheet" />
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
         </style>
@@ -31,189 +33,191 @@
     </head>
     <body>
         <header>
-            <a href="index.html" class="logo"><img src="images/RainyDays_Logo.png" class="logo" alt="Home, Company logo" /></a>
-            <label for="hamburger-menu"><i class="fa-solid fa-bars"></i></label>
-            <input type="checkbox" id="hamburger-menu" />
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="cart.html">My Cart</a></li>
-                    <li><a href="jackets.html" class="active">Jackets</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-            </nav>
+            <div class="header__content">
+                <a href="../index.html" class="logo"><img src="../images/RainyDays_Logo.png" class="logo" alt="Home, Company logo" /></a>
+                <button class="reset-style header__hamburger"><i class="fa-solid fa-bars fa-2x"></i></button>
+                <nav>
+                    <ul class="navigation">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="/html/cart.html">Cart</a></li>
+                        <li><a href="/html/jackets.html" class="active">Jackets</a></li>
+                        <li><a href="/html/contact.html">Contact</a></li>
+                        <li><a href="/html/about.html">About</a></li>
+                    </ul>
+                </nav>
+                <a href="/html/cart.html" class="header__cart"><i class="fa-solid fa-cart-shopping fa-2x"></i><span class="header__cart-counter">1</span></a>
+            </div>
         </header>
         <main>
             <section class="breadcrumbs">
-                <p><a href="index.html">Home</a> / Jackets</p>
+                <p><a href="../index.html">Home</a> / Jackets</p>
             </section>
             <h1>Jackets</h1>
             <section class="product-list">
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket1.png" alt="Picture of Adventure Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket1.png" alt="Picture of Adventure Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Adventure Jacket Men</h3></a>
                     <p class="product_price">1899kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket3.png" alt="Picture of Beta Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket3.png" alt="Picture of Beta Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Beta Jacket Men</h3></a>
                     <p class="product_price">1599kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket4.png" alt="Picture of Storm Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket4.png" alt="Picture of Storm Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Storm Jacket Men</h3></a>
                     <p class="product_price">1199kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket5.png" alt="Picture of Camper Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket5.png" alt="Picture of Camper Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Camper Jacket Men</h3></a>
                     <p class="product_price">999kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket6.png" alt="Picture of Rocker Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket6.png" alt="Picture of Rocker Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Rocker Jacket Men</h3></a>
                     <p class="product_price">1699kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket7.png" alt="Picture of Explore Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket7.png" alt="Picture of Explore Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Explore Jacket Men</h3></a>
                     <p class="product_price">1299kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket1.png" alt="Picture of Adventure Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket1.png" alt="Picture of Adventure Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Adventure Jacket Men</h3></a>
                     <p class="product_price">1899kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket3.png" alt="Picture of Beta Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket3.png" alt="Picture of Beta Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Beta Jacket Men</h3></a>
                     <p class="product_price">1599kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket4.png" alt="Picture of Storm Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket4.png" alt="Picture of Storm Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Storm Jacket Men</h3></a>
                     <p class="product_price">1199kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket5.png" alt="Picture of Camper Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket5.png" alt="Picture of Camper Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Camper Jacket Men</h3></a>
                     <p class="product_price">999kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket6.png" alt="Picture of Rocker Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket6.png" alt="Picture of Rocker Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Rocker Jacket Men</h3></a>
                     <p class="product_price">1699kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket7.png" alt="Picture of Explore Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket7.png" alt="Picture of Explore Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Explore Jacket Men</h3></a>
                     <p class="product_price">1299kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket1.png" alt="Picture of Adventure Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket1.png" alt="Picture of Adventure Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Adventure Jacket Men</h3></a>
                     <p class="product_price">1899kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket3.png" alt="Picture of Beta Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket3.png" alt="Picture of Beta Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Beta Jacket Men</h3></a>
                     <p class="product_price">1599kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket4.png" alt="Picture of Storm Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket4.png" alt="Picture of Storm Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Storm Jacket Men</h3></a>
                     <p class="product_price">1199kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket5.png" alt="Picture of Camper Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket5.png" alt="Picture of Camper Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Camper Jacket Men</h3></a>
                     <p class="product_price">999kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket6.png" alt="Picture of Rocker Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket6.png" alt="Picture of Rocker Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Rocker Jacket Men</h3></a>
                     <p class="product_price">1699kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket7.png" alt="Picture of Explore Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket7.png" alt="Picture of Explore Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Explore Jacket Men</h3></a>
                     <p class="product_price">1299kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket1.png" alt="Picture of Adventure Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket1.png" alt="Picture of Adventure Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Adventure Jacket Men</h3></a>
                     <p class="product_price">1899kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket3.png" alt="Picture of Beta Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket3.png" alt="Picture of Beta Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Beta Jacket Men</h3></a>
                     <p class="product_price">1599kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket4.png" alt="Picture of Storm Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket4.png" alt="Picture of Storm Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Storm Jacket Men</h3></a>
                     <p class="product_price">1199kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket5.png" alt="Picture of Camper Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket5.png" alt="Picture of Camper Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Camper Jacket Men</h3></a>
                     <p class="product_price">999kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket6.png" alt="Picture of Rocker Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket6.png" alt="Picture of Rocker Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Rocker Jacket Men</h3></a>
                     <p class="product_price">1699kr</p>
                 </div>
                 <div class="product">
                     <div class="product-wrapper">
-                        <a href="product.html" class="product-anchor"><img src="images/RainyDays_Jacket7.png" alt="Picture of Explore Jacket Men" /></a>
+                        <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket7.png" alt="Picture of Explore Jacket Men" /></a>
                     </div>
                     <a href="product.html" class="product-anchor"><h3 class="product_name">Explore Jacket Men</h3></a>
                     <p class="product_price">1299kr</p>
@@ -221,14 +225,16 @@
             </section>
         </main>
         <footer>
-            <section>
-                <p>Rainy Days &copy 2022. All Rights Reserved</p>
-            </section>
-            <section class="social-media">
-                <a href="??" aria-label="Follow us on Facebook"><i class="fa-brands fa-facebook"></i></a>
-                <a href="??" aria-label="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="??" aria-label="Follow us on Twitter"><i class="fa-brands fa-twitter"></i></a>
-            </section>
+            <div class="footer__content">
+                <section>
+                    <p>Rainy Days &copy 2022. All Rights Reserved</p>
+                </section>
+                <section class="social-media">
+                    <a href="??" aria-label="Follow us on Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="??" aria-label="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="??" aria-label="Follow us on Twitter"><i class="fa-brands fa-twitter"></i></a>
+                </section>
+            </div>
         </footer>
     </body>
 </html>

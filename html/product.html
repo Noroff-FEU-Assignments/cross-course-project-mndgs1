@@ -4,15 +4,15 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Rainy Days, Jackets for all conditions" />
-        <title>Home | Rainy Days</title>
-        <link href="css/styles.css" rel="stylesheet" />
-        <style></style>
+        <meta name="description" content="?? description" />
+        <title>Product Specific | Rainy Days</title>
+        <link href="../css/styles.css" rel="stylesheet" />
+        <link href="../css/product.css" rel="stylesheet" />
+        <link href="../css/media.css" rel="stylesheet" />
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
+        </style>
         <link rel="stylesheet" href="https://use.typekit.net/rtc1haa.css" />
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/index.css" rel="stylesheet" />
-        <link href="css/media.css" rel="stylesheet" />
-        <script src="js/scripts.js" defer></script>
         <script src="https://kit.fontawesome.com/57518a1e7d.js" crossorigin="anonymous"></script>
         <!-- Hotjar Tracking Code for https://sensational-rabanadas-5728dd.netlify.app/ -->
         <script>
@@ -31,16 +31,16 @@
             })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
         </script>
     </head>
-    <body class="home">
+    <body>
         <header>
             <div class="header__content">
-                <a href="../index.html" class="logo"><img src="images/RainyDays_Logo.png" class="logo" alt="Home, Company logo" /></a>
+                <a href="../index.html" class="logo"><img src="../images/RainyDays_Logo.png" class="logo" alt="Home, Company logo" /></a>
                 <button class="reset-style header__hamburger"><i class="fa-solid fa-bars fa-2x"></i></button>
                 <nav>
                     <ul class="navigation">
-                        <li><a href="../index.html" class="active">Home</a></li>
+                        <li><a href="../index.html">Home</a></li>
                         <li><a href="/html/cart.html">Cart</a></li>
-                        <li><a href="/html/jackets.html">Jackets</a></li>
+                        <li><a href="/html/jackets.html" class="active">Jackets</a></li>
                         <li><a href="/html/contact.html">Contact</a></li>
                         <li><a href="/html/about.html">About</a></li>
                     </ul>
@@ -49,10 +49,23 @@
             </div>
         </header>
         <main>
-            <section class="welcome">
-                <h1>Quality Outdoor Jackets</h1>
-                <p>Comfort, style, durability where ever you will go.</p>
-                <a href="jackets.html" class="cta">Shop Now</a>
+            <section class="breadcrumbs">
+                <p><a href="../index.html">Home</a> / <a href="jackets.html">Jackets</a> / Product</p>
+            </section>
+            <section class="product-specific">
+                <div class="product-col1">
+                    <img src="../../images/RainyDays_Jacket1.png" alt="Picture of Adventure Jacket" />
+                </div>
+                <div class="product-col2">
+                    <h1>Adventure Jacket Men</h1>
+                    <p class="product_price">1899kr</p>
+                    <h2>Product description</h2>
+                    <p>
+                        Stretchy jersey panels on the sides and sleeves make this hybrid jacket an even more comfortable and layering-friendly take on our iconic Helium range. Lightweight and packable, this jacket has wind- and water
+                        repellent panels with premium 90/10 down insulation, making it great for outdoor activities. Made with responsibly sourced down, traceable through the Track My Down® program.
+                    </p>
+                    <a href="?event?" class="cta">Add to Cart</a>
+                </div>
             </section>
         </main>
         <footer>

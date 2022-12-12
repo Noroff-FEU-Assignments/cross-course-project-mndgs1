@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Rainy Days, Contact Us" />
         <title>Contact Us | Rainy Days</title>
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
+        <link href="../css/media.css" rel="stylesheet" />
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
         </style>
@@ -31,22 +32,24 @@
     </head>
     <body>
         <header>
-            <a href="index.html" class="logo"><img src="images/RainyDays_Logo.png" class="logo" alt="Home, Company logo" /></a>
-            <label for="hamburger-menu"><i class="fa-solid fa-bars"></i></label>
-            <input type="checkbox" id="hamburger-menu" />
-            <nav>
-                <ul class="navigation">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="cart.html">My Cart</a></li>
-                    <li><a href="jackets.html">Jackets</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-            </nav>
+            <div class="header__content">
+                <a href="../index.html" class="logo"><img src="../images/RainyDays_Logo.png" class="logo" alt="Home, Company logo" /></a>
+                <button class="reset-style header__hamburger"><i class="fa-solid fa-bars fa-2x"></i></button>
+                <nav>
+                    <ul class="navigation">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="/html/cart.html">Cart</a></li>
+                        <li><a href="/html/jackets.html">Jackets</a></li>
+                        <li><a href="/html/contact.html" class="active">Contact</a></li>
+                        <li><a href="/html/about.html">About</a></li>
+                    </ul>
+                </nav>
+                <a href="/html/cart.html" class="header__cart"><i class="fa-solid fa-cart-shopping fa-2x"></i><span class="header__cart-counter">1</span></a>
+            </div>
         </header>
         <main>
             <section class="breadcrumbs">
-                <p><a href="index.html">Home</a> / Contact Us</p>
+                <p><a href="../index.html">Home</a> / Contact Us</p>
             </section>
             <h1>Contact Us</h1>
             <section>
@@ -68,14 +71,16 @@
             <a href="?event?" class="cta">Send</a>
         </main>
         <footer>
-            <section>
-                <p>Rainy Days &copy 2022. All Rights Reserved</p>
-            </section>
-            <section class="social-media">
-                <a href="??" aria-label="Follow us on Facebook"><i class="fa-brands fa-facebook"></i></a>
-                <a href="??" aria-label="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="??" aria-label="Follow us on Twitter"><i class="fa-brands fa-twitter"></i></a>
-            </section>
+            <div class="footer__content">
+                <section>
+                    <p>Rainy Days &copy 2022. All Rights Reserved</p>
+                </section>
+                <section class="social-media">
+                    <a href="??" aria-label="Follow us on Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="??" aria-label="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="??" aria-label="Follow us on Twitter"><i class="fa-brands fa-twitter"></i></a>
+                </section>
+            </div>
         </footer>
     </body>
 </html>

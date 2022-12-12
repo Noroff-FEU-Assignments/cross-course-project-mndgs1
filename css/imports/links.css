@@ -1,0 +1,33 @@
+.cta {
+    display: inline-block;
+    background-color: initial;
+    background-color: #ec622c;
+    border-radius: 8px;
+    border-width: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 12px 48px;
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    transition: all 150ms;
+    margin: 20px auto;
+}
+
+.cta:hover {
+    box-shadow: rgba(0, 1, 0, 0.2) 0 2px 8px;
+    opacity: 0.95;
+}
+
+.cta:active {
+    outline: 0;
+}
+
+.cta:focus {
+    box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 3px;
+}
+.icons {
+    display: inline-block;
+}
