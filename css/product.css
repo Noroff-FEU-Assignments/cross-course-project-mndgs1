@@ -13,3 +13,7 @@
     width: 100%;
     object-fit: contain;
 }
+
+.product-specific .cta {
+    margin-left: 0px;
+}

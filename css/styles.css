@@ -91,24 +91,20 @@ header .icons {
 }
 
 .header__cart-counter {
+    visibility: hidden;
+    display: inline-block;
     background-color: #ec6226;
     color: white;
     border-radius: 50%;
     font-size: 14px;
-    padding: 0px 8px;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    text-align: center;
 }
 
 .fa-solid {
     color: #113340;
-}
-
-.reset-style {
-    padding: 0;
-    border: none;
-    font: inherit;
-    color: inherit;
-    background-color: transparent;
-    cursor: pointer;
 }
 
 a {

@@ -1,6 +1,14 @@
+.reset-style {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 .cta {
-    display: inline-block;
-    background-color: initial;
+    display: block;
     background-color: #ec622c;
     border-radius: 8px;
     border-width: 0;
@@ -11,9 +19,9 @@
     font-size: 18px;
     padding: 12px 48px;
     text-align: center;
-    transform: translate3d(0, 0, 0);
     transition: all 150ms;
     margin: 20px auto;
+    width: 200px;
 }
 
 .cta:hover {
