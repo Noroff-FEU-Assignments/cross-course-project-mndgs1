@@ -1,17 +1,27 @@
-console.log(cart);
+createCartDOM();
 
-// Will print an array of all todos that still need to be completed
+// Event listeners
+// const quantityAdjust = document.getElementsByClassName("quantity-adjust");
 
-// function removeObjectWithId(arr, id) {
-//     const objWithIdIndex = arr.findIndex((obj) => obj.id === id);
+// for (i = 0; i < quantityAdjust.length; i++) {
+//     const currentIteration = quantityAdjust[i];
+//     currentIteration.addEventListener("click", (e) => {
+//         const currentId = currentIteration.getAttribute("id");
+//         const focusItem = cart.find(({ id }) => id === currentId);
 
-//     if (objWithIdIndex > -1) {
-//         arr.splice(objWithIdIndex, 1);
+//         if (currentIteration.innerHTML === "+") {
+//             focusItem.quantity += 1;
+//         } else {
+//             focusItem.quantity -= 1;
+//         }
+//     });
+
+//     localStorage.clear();
+
+//     for (i = 0; i < cart.length; i++) {
+//         const json = JSON.stringify(cart[i]);
+//         localStorage.setItem(i, json);
 //     }
-
-//     return arr;
 // }
 
-// let newArray = cartArray.forEach((e) => {
-//     removeObjectWithId(cartArray, e.id);
-// });
+const productDelete = document.querySelector(".cart_delete");

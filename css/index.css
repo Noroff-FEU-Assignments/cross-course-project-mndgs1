@@ -9,6 +9,10 @@
     position: relative;
 }
 
+body {
+    max-width: none;
+}
+
 .welcome .cta {
     margin-left: 0px;
 }

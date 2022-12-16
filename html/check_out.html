@@ -7,13 +7,18 @@
         <meta name="description" content="Rainy Days Check-Out page" />
         <title>Check Out | Rainy Days</title>
         <link href="../css/styles.css" rel="stylesheet" />
+        <link href="../css/imports/links.css" rel="stylesheet" />
         <link href="../css/cart.css" rel="stylesheet" />
+        <link href="../css/checkout.css" rel="stylesheet" />
         <link href="../css/media.css" rel="stylesheet" />
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
         </style>
         <link rel="stylesheet" href="https://use.typekit.net/rtc1haa.css" />
         <script src="https://kit.fontawesome.com/57518a1e7d.js" crossorigin="anonymous"></script>
+        <script src="../js/scripts.js" defer></script>
+        <script src="../js/cart.js" defer></script>
+        <script src="../js/checkout.js" defer></script>
         <!-- Hotjar Tracking Code for https://sensational-rabanadas-5728dd.netlify.app/ -->
         <script>
             (function (h, o, t, j, a, r) {
@@ -56,20 +61,7 @@
             <div class="checkout-wrap">
                 <div class="checkout-col1">
                     <h2>Order Summary</h2>
-                    <section class="cart_product-list">
-                        <div class="cart_product-card">
-                            <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket1.png" alt="Adventure Jacket" /></a>
-                            <h3><a href="product.html" class="product-anchor">Adventure Jacket Men</a></h3>
-                            <p>1899kr</p>
-                            <a href="?event?" class="cart_delete">Delete</a>
-                        </div>
-                        <div class="cart_product-card">
-                            <a href="product.html" class="product-anchor"><img src="../images/RainyDays_Jacket3.png" alt="Beta Jacket" /></a>
-                            <h3><a href="product.html" class="product-anchor">Beta Jacket Men</a></h3>
-                            <p>1599kr</p>
-                            <a href="?event?" class="cart_delete">Delete</a>
-                        </div>
-                    </section>
+                    <section class="cart_product-list"></section>
                     <section class="cart_price">
                         <p>Shipping:</p>
                         <p class="price">0kr</p>
@@ -84,18 +76,22 @@
                             <div class="input-box">
                                 <label>E-mail *</label>
                                 <input type="email" id="Email" name="Email" placeholder="name@example.com" required="required" autocomplete="on" />
+                                <span class="error message" id="emailMessage"></span>
                             </div>
                             <div class="input-box">
                                 <label>First Name *</label>
-                                <input type="text" id="First-name" name="First-name" placeholder="E.g. George" autocomplete="on" />
+                                <input type="text" id="First-name" name="First-name" placeholder="E.g. George" autocomplete="on" required="required" />
+                                <span class="error message" id="firstnamMessage"></span>
                             </div>
                             <div class="input-box">
                                 <label>Last Name *</label>
                                 <input type="text" id="Last-name" name="Last-name" placeholder="E.g. Washington" required="required" autocomplete="on" />
+                                <span class="error message" id="lastnameMessage"></span>
                             </div>
                             <div class="input-box">
                                 <label>Street and House Number *</label>
                                 <input type="text" id="address" name="address" placeholder="E.g. Willow road 22" required="required" autocomplete="on" />
+                                <span class="error message" id="addressMessage"></span>
                             </div>
                             <div class="input-box">
                                 <label>Address2/ Company</label>
@@ -104,14 +100,17 @@
                             <div class="input-box">
                                 <label>Postal Code *</label>
                                 <input type="text" id="postal-code" name="postal-code" placeholder="E.g. N0-2754" required="required" autocomplete="on" />
+                                <span class="error message" id="postalMessage"></span>
                             </div>
                             <div class="input-box">
                                 <label>City *</label>
                                 <input type="text" id="City" name="City" placeholder="E.g. Oslo" required="required" autocomplete="on" />
+                                <span class="error message" id="cityMessage"></span>
                             </div>
                             <div class="input-box">
                                 <label>Country *</label>
                                 <input type="email" id="Email" name="Email" placeholder="name@example.com" required="required" autocomplete="on" />
+                                <span class="error message" id="countryMessage"></span>
                             </div>
                         </div>
                     </section>
@@ -121,24 +120,26 @@
                             <div class="input-box">
                                 <label>Card Number *</label>
                                 <input type="text" id="card-number" name="card-number" placeholder="xxxx xxxx xxxx xxxx" required="required" autocomplete="on" />
+                                <span class="error message" id="cardNumberMessage"></span>
                             </div>
                             <div class="input-box">
                                 <label>Expiry Date *</label>
-                                <input type="text" id="expiration-date" name="expiration-date" placeholder="01/2001" required="required" autocomplete="on" />
+                                <input type="date" id="expiration-date" name="expiration-date" placeholder="01/2001" required="required" autocomplete="on" />
+                                <span class="error message" id="expDateMessage"></span>
                             </div>
                             <div class="input-box">
                                 <label>CVC / CVV *</label>
                                 <input type="text" id="CVC" name="CVC" placeholder="111" required="required" autocomplete="off" />
+                                <span class="error message" id="cvcMessage"></span>
                             </div>
                             <div class="input-box">
                                 <label>Cardholders Name *</label>
                                 <input type="text" id="name" name="name" placeholder="George Washington" required="required" autocomplete="on" />
+                                <span class="error message" id="cardNameMessage"></span>
                             </div>
                         </div>
                     </section>
-                    <!-- <a href="?event?" class="cta"> Confirm Order</a> -->
-                    <input type="checkbox" id="click" />
-                    <label for="click" class="click-me cta">Confirm Order </label>
+                    <button class="reset-style cta">Confirm Order</button>
                     <section class="checkout-success">
                         <p>Your order has been successful!</p>
                         <p>Thank You for Shopping with us!</p>

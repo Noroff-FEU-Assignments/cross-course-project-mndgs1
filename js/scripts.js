@@ -66,6 +66,50 @@ function getLocalStorage() {
     return cart;
 }
 
+// Create Cart DOM
+function createCartDOM() {
+    const productsContainer = document.querySelector(".cart_product-list");
+
+    cart.forEach((item) => {
+        const itemContainer = document.createElement("div");
+        itemContainer.classList.add("cart_product-card");
+
+        itemContainer.innerHTML = `<a href="product.html?id=${item.id}" class="product-anchor">
+                                    <img src="../${item.image}" alt="${item.name}" />
+                                    <h3>${item.name}</h3>
+                                  </a>
+                                  <p>${item.price}kr</p>
+                                  <button class="cart_delete reset-style">Delete</button>
+                                  <div class="quantity-container">
+                                    <p>Quantity:</p>
+                                    <div class="quantity-adjust-container">
+                                      <button id="${item.id}" class="reset-style cta quantity-adjust quantity-minus">-</button>
+                                      <p>${item.quantity}</p>
+                                      <button id ="${item.id}" class="reset-style cta quantity-adjust quantity-plus">+</button>
+                                    </div>
+                                  </div>`;
+        productsContainer.appendChild(itemContainer);
+    });
+}
+
 getLocalStorage();
 
-// Check cart item count
+// Form Validation functions
+
+// Check e-mail input
+function validateEmail(email) {
+    const regEx = /\S+@\S+\.\S+/;
+    const patternMatches = regEx.test(email);
+    return patternMatches;
+}
+
+// Check input length
+function checkLength(value, len) {
+    if (value.trim().length > len) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Add an error message
