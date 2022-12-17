@@ -9,7 +9,7 @@
         <link href="../css/styles.css" rel="stylesheet" />
         <link href="../css/imports/links.css" rel="stylesheet" />
         <link href="../css/cart.css" rel="stylesheet" />
-        <link href="../css/checkout.css" rel="stylesheet" />
+        <link href="../css/form.css" rel="stylesheet" />
         <link href="../css/media.css" rel="stylesheet" />
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
@@ -18,7 +18,8 @@
         <script src="https://kit.fontawesome.com/57518a1e7d.js" crossorigin="anonymous"></script>
         <script src="../js/scripts.js" defer></script>
         <script src="../js/cart.js" defer></script>
-        <script src="../js/checkout.js" defer></script>
+        <script src="../js/form-validation.js" defer></script>
+
         <!-- Hotjar Tracking Code for https://sensational-rabanadas-5728dd.netlify.app/ -->
         <script>
             (function (h, o, t, j, a, r) {
@@ -74,43 +75,43 @@
                     <section class="shipping-info">
                         <div class="input-box_container">
                             <div class="input-box">
-                                <label>E-mail *</label>
-                                <input type="email" id="Email" name="Email" placeholder="name@example.com" required="required" autocomplete="on" />
-                                <span class="error message" id="emailMessage"></span>
+                                <label for="email">E-mail *</label>
+                                <input type="email" id="email" name="email" placeholder="name@example.com" required="required" autocomplete="on" />
+                                <span class="message" id="emailMessage"></span>
                             </div>
                             <div class="input-box">
-                                <label>First Name *</label>
-                                <input type="text" id="First-name" name="First-name" placeholder="E.g. George" autocomplete="on" required="required" />
-                                <span class="error message" id="firstnamMessage"></span>
+                                <label for="first-name">First Name *</label>
+                                <input type="text" id="first-name" name="first-name" placeholder="E.g. George" autocomplete="on" required="required" />
+                                <span class="message" id="firstnamMessage"></span>
                             </div>
                             <div class="input-box">
-                                <label>Last Name *</label>
-                                <input type="text" id="Last-name" name="Last-name" placeholder="E.g. Washington" required="required" autocomplete="on" />
-                                <span class="error message" id="lastnameMessage"></span>
+                                <label for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" name="last-name" placeholder="E.g. Washington" required="required" autocomplete="on" />
+                                <span class="message" id="lastnameMessage"></span>
                             </div>
                             <div class="input-box">
-                                <label>Street and House Number *</label>
+                                <label for="address">Street and House Number *</label>
                                 <input type="text" id="address" name="address" placeholder="E.g. Willow road 22" required="required" autocomplete="on" />
-                                <span class="error message" id="addressMessage"></span>
+                                <span class="message" id="addressMessage"></span>
                             </div>
                             <div class="input-box">
-                                <label>Address2/ Company</label>
+                                <label for="address2">Address2/ Company</label>
                                 <input type="text" id="address2" name="address2" placeholder="" autocomplete="on" />
                             </div>
                             <div class="input-box">
-                                <label>Postal Code *</label>
+                                <label for="postal-code">Postal Code *</label>
                                 <input type="text" id="postal-code" name="postal-code" placeholder="E.g. N0-2754" required="required" autocomplete="on" />
-                                <span class="error message" id="postalMessage"></span>
+                                <span class="message" id="postalMessage"></span>
                             </div>
                             <div class="input-box">
-                                <label>City *</label>
-                                <input type="text" id="City" name="City" placeholder="E.g. Oslo" required="required" autocomplete="on" />
-                                <span class="error message" id="cityMessage"></span>
+                                <label for="city">City *</label>
+                                <input type="text" id="city" name="city" placeholder="E.g. Oslo" required="required" autocomplete="on" />
+                                <span class="message" id="cityMessage"></span>
                             </div>
                             <div class="input-box">
-                                <label>Country *</label>
-                                <input type="email" id="Email" name="Email" placeholder="name@example.com" required="required" autocomplete="on" />
-                                <span class="error message" id="countryMessage"></span>
+                                <label for="country">Country *</label>
+                                <input type="email" id="country" name="country" placeholder="E.g. Norway" required="required" autocomplete="on" />
+                                <span class="message" id="countryMessage"></span>
                             </div>
                         </div>
                     </section>
@@ -118,29 +119,29 @@
                     <section class="shipping-info">
                         <div class="input-box_container">
                             <div class="input-box">
-                                <label>Card Number *</label>
+                                <label for="card-number">Card Number *</label>
                                 <input type="text" id="card-number" name="card-number" placeholder="xxxx xxxx xxxx xxxx" required="required" autocomplete="on" />
-                                <span class="error message" id="cardNumberMessage"></span>
+                                <span class="message" id="cardNumberMessage"></span>
                             </div>
                             <div class="input-box">
-                                <label>Expiry Date *</label>
+                                <label for="expiration-date">Expiry Date *</label>
                                 <input type="date" id="expiration-date" name="expiration-date" placeholder="01/2001" required="required" autocomplete="on" />
-                                <span class="error message" id="expDateMessage"></span>
+                                <span class="message" id="expDateMessage"></span>
                             </div>
                             <div class="input-box">
-                                <label>CVC / CVV *</label>
-                                <input type="text" id="CVC" name="CVC" placeholder="111" required="required" autocomplete="off" />
-                                <span class="error message" id="cvcMessage"></span>
+                                <label for="cvc">CVC / CVV *</label>
+                                <input type="text" id="cvc" name="cvc" placeholder="111" required="required" autocomplete="off" />
+                                <span class="message" id="cvcMessage"></span>
                             </div>
                             <div class="input-box">
-                                <label>Cardholders Name *</label>
-                                <input type="text" id="name" name="name" placeholder="George Washington" required="required" autocomplete="on" />
-                                <span class="error message" id="cardNameMessage"></span>
+                                <label for="card-name">Cardholders Name *</label>
+                                <input type="text" id="card-name" name="card-name" placeholder="George Washington" required="required" autocomplete="on" />
+                                <span class="message" id="cardNameMessage"></span>
                             </div>
                         </div>
                     </section>
-                    <button class="reset-style cta">Confirm Order</button>
-                    <section class="checkout-success">
+                    <button class="reset-style cta submit">Confirm Order</button>
+                    <section class="form-success">
                         <p>Your order has been successful!</p>
                         <p>Thank You for Shopping with us!</p>
                         <p>You will receive an e-mail with delivery information shortly</p>

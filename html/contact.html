@@ -8,10 +8,13 @@
         <title>Contact Us | Rainy Days</title>
         <link href="../css/styles.css" rel="stylesheet" />
         <link href="../css/media.css" rel="stylesheet" />
+        <link href="../css/form.css" rel="stylesheet" />
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
         </style>
         <link rel="stylesheet" href="https://use.typekit.net/rtc1haa.css" />
+        <script src="../js/scripts.js" defer></script>
+        <script src="../js/form-validation.js" defer></script>
         <script src="https://kit.fontawesome.com/57518a1e7d.js" crossorigin="anonymous"></script>
         <!-- Hotjar Tracking Code for https://sensational-rabanadas-5728dd.netlify.app/ -->
         <script>
@@ -52,23 +55,28 @@
                 <p><a href="../index.html">Home</a> / Contact Us</p>
             </section>
             <h1>Contact Us</h1>
-            <section>
+            <section class="contact-form">
                 <div class="input-box_container">
+                    <div class="message success"></div>
                     <div class="input-box">
                         <label>Full name *</label>
-                        <input type="text" id="Name" name="Name" placeholder="Full name" spellcheck="false" autocomplete="on" />
+                        <input type="text" id="Name" name="Name" placeholder="Full name" spellcheck="false" required="required" autocomplete="on" />
+                        <span class="message"></span>
                     </div>
                     <div class="input-box">
                         <label>E-mail *</label>
-                        <input type="email" id="Email" name="Email" placeholder="name@example.com" required="required" spellcheck="false" autocomplete="on" />
+                        <input type="email" id="email" name="email" placeholder="name@example.com" required="required" spellcheck="false" autocomplete="on" />
+                        <span class="message"></span>
                     </div>
                     <div class="input-box">
                         <label>Message *</label>
-                        <textarea type="message" id="message" name="message" placeholder="Type your message here..." required="required" spellcheck="false" autocomplete="off"></textarea>
+                        <textarea type="message" id="contactMessage" name="contactMessage" placeholder="Type your message here..." required="required" spellcheck="false" autocomplete="off"></textarea>
+                        <span class="message"></span>
                     </div>
                 </div>
             </section>
-            <a href="?event?" class="cta">Send</a>
+
+            <button class="cta reset-style submit">Send</button>
         </main>
         <footer>
             <div class="footer__content">

@@ -29,13 +29,6 @@
     opacity: 0.95;
 }
 
-.cta:active {
-    outline: 0;
-}
-
-.cta:focus {
-    box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 3px;
-}
 .icons {
     display: inline-block;
 }

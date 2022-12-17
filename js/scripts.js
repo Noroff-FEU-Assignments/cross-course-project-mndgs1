@@ -113,3 +113,29 @@ function checkLength(value, len) {
 }
 
 // Add an error message
+function manipulateErrorDOM(input, error) {
+    input.nextElementSibling.innerHTML = error;
+    input.nextElementSibling.classList.add("error");
+    input.style.borderColor = "red";
+    input.style.border = "1px solid #FF9494";
+}
+
+// Validate input
+function validateInput(input) {
+    if (input.required) {
+        if (!checkLength(input.value, 0)) {
+            manipulateErrorDOM(input, "This field is mandatory");
+        } else if (input.id === "card-number" && input.value.replace(" ", "").length !== 16) {
+            manipulateErrorDOM(input, "Type in a valid card number");
+        } else if (input.id === "cvc" && input.value.replace(" ", "").length !== 3) {
+            manipulateErrorDOM(input, "Type in a valid CVC number");
+        } else if (input.id === "email" && !validateEmail(input.value)) {
+            manipulateErrorDOM(input, "Type in a valid E-mail address");
+        } else {
+            input.nextElementSibling.innerHTML = "";
+            input.nextElementSibling.classList.remove("error");
+
+            input.style.borderColor = "#101334";
+        }
+    }
+}

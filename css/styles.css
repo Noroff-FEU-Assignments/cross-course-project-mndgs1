@@ -186,7 +186,6 @@ nav {
     display: block;
     height: 2.6em;
     padding: 0 1em;
-    font-size: 0.875em;
     line-height: 1;
     border-radius: 5px;
     border-width: 1px;
@@ -197,8 +196,18 @@ nav {
 
 .input-box textarea {
     height: 200px;
+    font-size: 1em;
+    padding: 10px;
 }
 .input-box_container {
     max-width: 1000px;
     margin: auto;
+}
+
+.success {
+    background-color: #d5f7d2;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: none;
 }

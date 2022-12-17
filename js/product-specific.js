@@ -5,7 +5,7 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
 // Getting specific jacket index from jackets[]
-const index = jackets.findIndex(function (jacket, index) {
+const index = jackets.findIndex(function (jacket) {
     return jacket.id === id;
 });
 
