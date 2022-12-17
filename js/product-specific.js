@@ -1,10 +1,14 @@
 // Fetching jacket details
-const detailContainer = document.querySelector(".product-specific");
-const queryString = document.location.search;
-const params = new URLSearchParams(queryString);
-const id = params.get("id");
+function fetchParams() {
+    const queryString = document.location.search;
+    const params = new URLSearchParams(queryString);
+    const id = params.get("id");
+    return id;
+}
 
 // Getting specific jacket index from jackets[]
+const id = fetchParams();
+
 const index = jackets.findIndex(function (jacket) {
     return jacket.id === id;
 });
@@ -32,17 +36,25 @@ createJacketDOM(id);
 // Adding to Cart
 const addToCartButton = document.querySelector(".add-to-cart");
 
-const cartCounter = document.querySelector(".header__cart-counter");
-
 addToCartButton.addEventListener("click", (e) => {
-    localStorage.setItem(uuidv4(), JSON.stringify(jacket));
+    let cart = getCart();
 
-    const newCount = parseInt(cartCounter.innerHTML);
+    if (!cart) {
+        let cart = [];
+        cart.push(jacket);
 
-    if (newCount === 0) {
-        cartCounter.style.visibility = "visible";
-        cartCounter.innerHTML = newCount + 1;
+        localStorage.setItem("cart", JSON.stringify(cart));
     } else {
-        cartCounter.innerHTML = `${newCount + 1}`;
+        const duplicate = cart.find(({ id }) => id === jacket.id);
+        if (duplicate) {
+            duplicate.quantity += 1;
+        } else {
+            cart.push(jacket);
+        }
+
+        localStorage.clear();
+        localStorage.setItem("cart", JSON.stringify(cart));
     }
+
+    createCountDOM();
 });

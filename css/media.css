@@ -39,7 +39,7 @@
         .checkout-wrap {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 100px;
+            gap: 30px;
         }
 
         nav {
@@ -73,6 +73,15 @@
 
         .product-specific img {
             max-height: 80vh;
+        }
+
+        .quantity-container {
+            justify-content: flex-end;
+        }
+
+        .quantity-container > p,
+        .quantity-adjust-container > p {
+            margin: 2px 6px;
         }
     }
 }

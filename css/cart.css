@@ -51,13 +51,17 @@
 
 .quantity-container {
     display: flex;
-    justify-content: flex-end;
 }
 
-.quantity-container > p,
-.quantity-adjust-container > p {
+.quantity-container > *,
+.quantity-adjust-container > * {
+    align-self: center;
+}
+
+.quantity-adjust-container > * {
     margin: 2px 6px;
 }
+
 .quantity-adjust {
     display: inline-block;
     margin: 0px;

@@ -1,7 +1,3 @@
-let cartItemCount = 0;
-let count = 0;
-let cart = [];
-
 const menuBars = document.querySelector(".header__hamburger");
 // Hamburger menu event listener
 menuBars.addEventListener("click", (e) => {
@@ -30,50 +26,21 @@ function createJacketsDOM() {
             productEl.innerHTML = `<div class="product-wrapper">
         <a href="product.html?id=${jacket.id}" class="product-anchor"><img src="${jacket.image}" alt="${jacket.name}" /></a>
       </div>
-        <a href="product.html" class="product-anchor"><h3 class="product_name">${jacket.name}</h3></a>
+      <a href="product.html?id=${jacket.id}" class="product-anchor"><h3 class="product_name">${jacket.name}</h3></a>
       <p class="product_price">${jacket.price}kr</p>`;
         });
     }
-}
-
-// Getting Cart from localStorage
-function getLocalStorage() {
-    const keysArray = Object.keys(localStorage);
-
-    for (i = 0; i < keysArray.length; i++) {
-        const json = localStorage.getItem(keysArray[i]);
-        const data = JSON.parse(json);
-        data.quantity = 1;
-        const duplicate = cart.find(({ id }) => id === data.id);
-        if (duplicate) {
-            duplicate.quantity += 1;
-        } else {
-            cart.push(data);
-        }
-    }
-
-    const cartCounter = document.querySelector(".header__cart-counter");
-
-    if (cart.length) {
-        let count = 0;
-        cart.forEach((el) => {
-            count += el.quantity;
-        });
-        cartCounter.innerHTML = count;
-        cartCounter.style.visibility = "visible";
-    }
-
-    return cart;
 }
 
 // Create Cart DOM
 function createCartDOM() {
     const productsContainer = document.querySelector(".cart_product-list");
 
-    cart.forEach((item) => {
+    productsContainer.innerHTML = "";
+    getCart().forEach((item) => {
         const itemContainer = document.createElement("div");
         itemContainer.classList.add("cart_product-card");
-
+        itemContainer.id = item.id;
         itemContainer.innerHTML = `<a href="product.html?id=${item.id}" class="product-anchor">
                                     <img src="../${item.image}" alt="${item.name}" />
                                     <h3>${item.name}</h3>
@@ -83,16 +50,14 @@ function createCartDOM() {
                                   <div class="quantity-container">
                                     <p>Quantity:</p>
                                     <div class="quantity-adjust-container">
-                                      <button id="${item.id}" class="reset-style cta quantity-adjust quantity-minus">-</button>
-                                      <p>${item.quantity}</p>
-                                      <button id ="${item.id}" class="reset-style cta quantity-adjust quantity-plus">+</button>
+                                      <button class="reset-style cta quantity-adjust quantity-minus">-</button>
+                                      <p class="cart-quantity">${item.quantity}</p>
+                                      <button class="reset-style cta quantity-adjust quantity-plus">+</button>
                                     </div>
                                   </div>`;
         productsContainer.appendChild(itemContainer);
     });
 }
-
-getLocalStorage();
 
 // Form Validation functions
 
@@ -138,4 +103,107 @@ function validateInput(input) {
             input.style.borderColor = "#101334";
         }
     }
+}
+
+// Cart Functions
+function getCount() {
+    const cart = getCart();
+    let sum = 0;
+
+    for (i = 0; i < cart.length; i++) {
+        sum += cart[i].quantity;
+    }
+    return sum;
+}
+
+function getCart() {
+    const data = localStorage.getItem("cart");
+    const cart = JSON.parse(data);
+    return cart;
+}
+
+function createCountDOM() {
+    const cartCounterEl = document.querySelector(".header__cart-counter");
+    cartCounterEl.innerHTML = "";
+    const count = getCount();
+    if (count > 0) {
+        cartCounterEl.style.visibility = "visible";
+        cartCounterEl.innerHTML = count;
+    } else {
+        cartCounterEl.style.visability = "none";
+    }
+}
+
+createCountDOM();
+
+function totalPriceCalc(array) {
+    let sum = 0;
+
+    array.forEach((item) => {
+        sum += item.price * item.quantity;
+    });
+    return sum;
+}
+
+function refreshCartDOM() {
+    createCartDOM();
+
+    const products = document.querySelectorAll(".cart_product-card");
+    const totalPrice = document.querySelector(".total");
+
+    totalPrice.innerHTML = `${totalPriceCalc(getCart())}kr`;
+
+    products.forEach((product) => {
+        const deleteButton = product.childNodes[4];
+        const quantityMinusButton = document.getElementById(`${product.id}`).querySelector(".quantity-minus");
+        const quantityPlusButton = document.getElementById(`${product.id}`).querySelector(".quantity-plus");
+        const quantity = document.getElementById(`${product.id}`).querySelector(".cart-quantity");
+
+        if (quantity.innerHTML === "1") {
+            quantityMinusButton.disabled = true;
+            quantityMinusButton.style.backgroundColor = "#EBEBE4";
+            quantityMinusButton.style.color = "black";
+        } else {
+            quantityMinusButton.disabled = false;
+        }
+
+        deleteButton.addEventListener("click", (e) => {
+            const cart = getCart();
+            const index = cart.indexOf(cart.find(({ id }) => id === product.id));
+            cart.splice(index, 1);
+
+            const json = JSON.stringify(cart);
+            localStorage.clear();
+            localStorage.setItem("cart", json);
+
+            refreshCartDOM();
+            createCountDOM();
+        });
+
+        quantityMinusButton.addEventListener("click", (e) => {
+            const cart = getCart();
+            const cartItem = cart.find(({ id }) => id === product.id);
+            cartItem.quantity -= 1;
+
+            const json = JSON.stringify(cart);
+            localStorage.clear();
+            localStorage.setItem("cart", json);
+
+            refreshCartDOM();
+            createCountDOM();
+        });
+
+        quantityPlusButton.addEventListener("click", (e) => {
+            const cart = getCart();
+            const cartItem = cart.find(({ id }) => id === product.id);
+            cartItem.quantity += 1;
+
+            const json = JSON.stringify(cart);
+            localStorage.clear();
+            localStorage.setItem("cart", json);
+
+            refreshCartDOM();
+            createCountDOM();
+        });
+    });
 }

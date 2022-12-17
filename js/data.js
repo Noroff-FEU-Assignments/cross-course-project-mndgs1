@@ -6,6 +6,7 @@ const jackets = [
             "Stretchy jersey panels on the sides and sleeves make this hybrid jacket an even more comfortable and layering-friendly take on our iconic Helium range. Lightweight and packable, this jacket has wind- and water repellent panels with premium 90/10 down insulation, making it great for outdoor activities. Made with responsibly sourced down, traceable through the Track My Down® program. ",
         image: "../images/RainyDays_Jacket1.png",
         id: "1",
+        quantity: 1,
     },
     {
         name: "Beta Jacket Men",
@@ -14,6 +15,7 @@ const jackets = [
             "Stretchy jersey panels on the sides and sleeves make this hybrid jacket an even more comfortable and layering-friendly take on our iconic Helium range. Lightweight and packable, this jacket has wind- and water repellent panels with premium 90/10 down insulation, making it great for outdoor activities. Made with responsibly sourced down, traceable through the Track My Down® program. ",
         image: "../images/RainyDays_Jacket7.png",
         id: "2",
+        quantity: 1,
     },
     {
         name: "Storm Jacket Men",
@@ -22,6 +24,7 @@ const jackets = [
             "Stretchy jersey panels on the sides and sleeves make this hybrid jacket an even more comfortable and layering-friendly take on our iconic Helium range. Lightweight and packable, this jacket has wind- and water repellent panels with premium 90/10 down insulation, making it great for outdoor activities. Made with responsibly sourced down, traceable through the Track My Down® program. ",
         image: "../images/RainyDays_Jacket3.png",
         id: "3",
+        quantity: 1,
     },
     {
         name: "Camper Jacket Men",
@@ -30,6 +33,7 @@ const jackets = [
             "Stretchy jersey panels on the sides and sleeves make this hybrid jacket an even more comfortable and layering-friendly take on our iconic Helium range. Lightweight and packable, this jacket has wind- and water repellent panels with premium 90/10 down insulation, making it great for outdoor activities. Made with responsibly sourced down, traceable through the Track My Down® program. ",
         image: "../images/RainyDays_Jacket4.png",
         id: "4",
+        quantity: 1,
     },
     {
         name: "Rocker Jacket Men",
@@ -38,6 +42,7 @@ const jackets = [
             "Stretchy jersey panels on the sides and sleeves make this hybrid jacket an even more comfortable and layering-friendly take on our iconic Helium range. Lightweight and packable, this jacket has wind- and water repellent panels with premium 90/10 down insulation, making it great for outdoor activities. Made with responsibly sourced down, traceable through the Track My Down® program. ",
         image: "../images/RainyDays_Jacket5.png",
         id: "5",
+        quantity: 1,
     },
     {
         name: "Explore Jacket Men",
@@ -46,5 +51,6 @@ const jackets = [
             "Stretchy jersey panels on the sides and sleeves make this hybrid jacket an even more comfortable and layering-friendly take on our iconic Helium range. Lightweight and packable, this jacket has wind- and water repellent panels with premium 90/10 down insulation, making it great for outdoor activities. Made with responsibly sourced down, traceable through the Track My Down® program. ",
         image: "../images/RainyDays_Jacket6.png",
         id: "6",
+        quantity: 1,
     },
 ];
