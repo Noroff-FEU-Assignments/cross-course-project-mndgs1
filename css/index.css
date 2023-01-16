@@ -26,4 +26,5 @@ body {
     margin: auto;
     max-width: 1280px;
     padding: 20px;
+    box-sizing: border-box;
 }

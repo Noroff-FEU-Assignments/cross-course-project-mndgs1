@@ -37,3 +37,11 @@ submit.addEventListener("click", (e) => {
         }
     }
 });
+
+const formSuccessButton = document.querySelector(`.form-success a`);
+
+if (formSuccessButton) {
+    formSuccessButton.addEventListener("click", (e) => {
+        localStorage.clear();
+    });
+}

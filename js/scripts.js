@@ -12,51 +12,35 @@ menuBars.addEventListener("click", (e) => {
     }
 });
 
-// Create Jackets List on Jackets page
-function createJacketsDOM() {
-    const productsContainer = document.querySelector(".product-list");
-
-    // for function uses to populate the list abit more, delete when more data
-    for (i = 0; i < 5; i++) {
-        jackets.forEach((jacket) => {
-            const productEl = document.createElement("div");
-            productEl.classList.add("product");
-            productsContainer.appendChild(productEl);
-
-            productEl.innerHTML = `<div class="product-wrapper">
-        <a href="product.html?id=${jacket.id}" class="product-anchor"><img src="${jacket.image}" alt="${jacket.name}" /></a>
-      </div>
-      <a href="product.html?id=${jacket.id}" class="product-anchor"><h3 class="product_name">${jacket.name}</h3></a>
-      <p class="product_price">${jacket.price}kr</p>`;
-        });
-    }
-}
+const baseUrl = "https://mindb.no/rainy-days/wp-json/wc/store/products";
 
 // Create Cart DOM
 function createCartDOM() {
     const productsContainer = document.querySelector(".cart_product-list");
 
     productsContainer.innerHTML = "";
-    getCart().forEach((item) => {
-        const itemContainer = document.createElement("div");
-        itemContainer.classList.add("cart_product-card");
-        itemContainer.id = item.id;
-        itemContainer.innerHTML = `<a href="product.html?id=${item.id}" class="product-anchor">
-                                    <img src="../${item.image}" alt="${item.name}" />
-                                    <h3>${item.name}</h3>
-                                  </a>
-                                  <p>${item.price}kr</p>
-                                  <button class="cart_delete reset-style">Delete</button>
-                                  <div class="quantity-container">
-                                    <p>Quantity:</p>
-                                    <div class="quantity-adjust-container">
-                                      <button class="reset-style cta quantity-adjust quantity-minus">-</button>
-                                      <p class="cart-quantity">${item.quantity}</p>
-                                      <button class="reset-style cta quantity-adjust quantity-plus">+</button>
-                                    </div>
-                                  </div>`;
-        productsContainer.appendChild(itemContainer);
-    });
+    if (getCart()) {
+        getCart().forEach((item) => {
+            const itemContainer = document.createElement("div");
+            itemContainer.classList.add("cart_product-card");
+            itemContainer.id = item.id;
+            itemContainer.innerHTML = `<a href="product.html?id=${item.id}" class="product-anchor">
+                                        <img src="${item.images[0].src}" alt="${item.images[0].alt}" />
+                                        <h3>${item.name}</h3>
+                                      </a>
+                                      <p>${item.prices.price}kr</p>
+                                      <button class="cart_delete reset-style">Delete</button>
+                                      <div class="quantity-container">
+                                        <p>Quantity:</p>
+                                        <div class="quantity-adjust-container">
+                                          <button class="reset-style cta quantity-adjust quantity-minus">-</button>
+                                          <p class="cart-quantity">${item.quantity}</p>
+                                          <button class="reset-style cta quantity-adjust quantity-plus">+</button>
+                                        </div>
+                                      </div>`;
+            productsContainer.appendChild(itemContainer);
+        });
+    }
 }
 
 // Form Validation functions
@@ -110,16 +94,20 @@ function getCount() {
     const cart = getCart();
     let sum = 0;
 
-    for (i = 0; i < cart.length; i++) {
-        sum += cart[i].quantity;
+    if (cart) {
+        for (i = 0; i < cart.length; i++) {
+            sum += cart[i].quantity;
+        }
     }
     return sum;
 }
 
 function getCart() {
-    const data = localStorage.getItem("cart");
-    const cart = JSON.parse(data);
-    return cart;
+    try {
+        const data = localStorage.getItem("cart");
+        const cart = JSON.parse(data);
+        return cart;
+    } catch {}
 }
 
 function createCountDOM() {
@@ -130,7 +118,7 @@ function createCountDOM() {
         cartCounterEl.style.visibility = "visible";
         cartCounterEl.innerHTML = count;
     } else {
-        cartCounterEl.style.visability = "none";
+        cartCounterEl.style.visibility = "hidden";
     }
 }
 
@@ -140,7 +128,7 @@ function totalPriceCalc(array) {
     let sum = 0;
 
     array.forEach((item) => {
-        sum += item.price * item.quantity;
+        sum += item.prices.price * item.quantity;
     });
     return sum;
 }
@@ -151,59 +139,65 @@ function refreshCartDOM() {
     const products = document.querySelectorAll(".cart_product-card");
     const totalPrice = document.querySelector(".total");
 
-    totalPrice.innerHTML = `${totalPriceCalc(getCart())}kr`;
+    if (getCart()) {
+        products.forEach((product) => {
+            const deleteButton = product.childNodes[4];
+            const quantityMinusButton = document.getElementById(`${product.id}`).querySelector(".quantity-minus");
+            const quantityPlusButton = document.getElementById(`${product.id}`).querySelector(".quantity-plus");
+            const quantity = document.getElementById(`${product.id}`).querySelector(".cart-quantity");
 
-    products.forEach((product) => {
-        const deleteButton = product.childNodes[4];
-        const quantityMinusButton = document.getElementById(`${product.id}`).querySelector(".quantity-minus");
-        const quantityPlusButton = document.getElementById(`${product.id}`).querySelector(".quantity-plus");
-        const quantity = document.getElementById(`${product.id}`).querySelector(".cart-quantity");
+            if (quantity.innerHTML === "1") {
+                quantityMinusButton.disabled = true;
+                quantityMinusButton.style.backgroundColor = "#EBEBE4";
+                quantityMinusButton.style.color = "black";
+            } else {
+                quantityMinusButton.disabled = false;
+            }
 
-        if (quantity.innerHTML === "1") {
-            quantityMinusButton.disabled = true;
-            quantityMinusButton.style.backgroundColor = "#EBEBE4";
-            quantityMinusButton.style.color = "black";
-        } else {
-            quantityMinusButton.disabled = false;
-        }
+            deleteButton.addEventListener("click", (e) => {
+                const cart = getCart();
+                const index = cart.indexOf(cart.find(({ id }) => id === product.id));
+                cart.splice(index, 1);
 
-        deleteButton.addEventListener("click", (e) => {
-            const cart = getCart();
-            const index = cart.indexOf(cart.find(({ id }) => id === product.id));
-            cart.splice(index, 1);
+                const json = JSON.stringify(cart);
+                localStorage.clear();
 
-            const json = JSON.stringify(cart);
-            localStorage.clear();
-            localStorage.setItem("cart", json);
+                if (cart.length > 0) {
+                    localStorage.setItem("cart", json);
+                }
 
-            refreshCartDOM();
-            createCountDOM();
+                refreshCartDOM();
+                createCountDOM();
+            });
+
+            quantityMinusButton.addEventListener("click", (e) => {
+                const cart = getCart();
+                const cartItem = cart.find(({ id }) => id == product.id);
+                cartItem.quantity -= 1;
+
+                const json = JSON.stringify(cart);
+                localStorage.clear();
+                localStorage.setItem("cart", json);
+
+                refreshCartDOM();
+                createCountDOM();
+            });
+
+            quantityPlusButton.addEventListener("click", (e) => {
+                const cart = getCart();
+
+                const cartItem = cart.find(({ id }) => id == product.id);
+
+                cartItem.quantity += 1;
+
+                const json = JSON.stringify(cart);
+                localStorage.clear();
+                localStorage.setItem("cart", json);
+
+                refreshCartDOM();
+                createCountDOM();
+            });
         });
-
-        quantityMinusButton.addEventListener("click", (e) => {
-            const cart = getCart();
-            const cartItem = cart.find(({ id }) => id === product.id);
-            cartItem.quantity -= 1;
-
-            const json = JSON.stringify(cart);
-            localStorage.clear();
-            localStorage.setItem("cart", json);
-
-            refreshCartDOM();
-            createCountDOM();
-        });
-
-        quantityPlusButton.addEventListener("click", (e) => {
-            const cart = getCart();
-            const cartItem = cart.find(({ id }) => id === product.id);
-            cartItem.quantity += 1;
-
-            const json = JSON.stringify(cart);
-            localStorage.clear();
-            localStorage.setItem("cart", json);
-
-            refreshCartDOM();
-            createCountDOM();
-        });
-    });
+        totalPrice.innerHTML = `${totalPriceCalc(getCart())}kr`;
+    }
 }

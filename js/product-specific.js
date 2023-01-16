@@ -9,52 +9,62 @@ function fetchParams() {
 // Getting specific jacket index from jackets[]
 const id = fetchParams();
 
-const index = jackets.findIndex(function (jacket) {
-    return jacket.id === id;
-});
-
-const jacket = jackets[index];
+let jacket;
 
 // Create Jacket HTML on Product page
-function createJacketDOM(id) {
+function createJacketDOM(product) {
     const jacketContainer = document.querySelector(".product-specific");
 
     jacketContainer.innerHTML = `<div class="product-col1">
-                                <img src="${jacket.image}" alt="${jacket.name}" />
+                                <img src="${product.images[0].src}" alt="${product.images[0].alt}" />
                               </div>
                               <div class="product-col2">
-                                <h1>${jacket.name}</h1>
-                                <p class="product_price">${jacket.price}kr</p>
+                                <h1>${product.name}</h1>
+                                <p class="product_price">${product.prices.price}kr</p>
                                 <h2>Product description</h2>
-                                <p>${jacket.description}</p>
+                                ${product.description}
                                 <button class="reset-style cta add-to-cart">Add to Cart</button>
                               </div>`;
-}
 
-createJacketDOM(id);
+    const addToCartButton = document.querySelector(".add-to-cart");
 
-// Adding to Cart
-const addToCartButton = document.querySelector(".add-to-cart");
+    addToCartButton.addEventListener("click", (e) => {
+        let cart = getCart();
 
-addToCartButton.addEventListener("click", (e) => {
-    let cart = getCart();
-
-    if (!cart) {
-        let cart = [];
-        cart.push(jacket);
-
-        localStorage.setItem("cart", JSON.stringify(cart));
-    } else {
-        const duplicate = cart.find(({ id }) => id === jacket.id);
-        if (duplicate) {
-            duplicate.quantity += 1;
-        } else {
+        if (!cart) {
+            let cart = [];
+            jacket.quantity = 1;
             cart.push(jacket);
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+        } else {
+            const duplicate = cart.find(({ id }) => id === jacket.id);
+            if (duplicate) {
+                duplicate.quantity += 1;
+            } else {
+                jacket.quantity = 1;
+                cart.push(jacket);
+            }
+
+            localStorage.clear();
+            localStorage.setItem("cart", JSON.stringify(cart));
         }
 
-        localStorage.clear();
-        localStorage.setItem("cart", JSON.stringify(cart));
-    }
+        createCountDOM();
+    });
+}
 
-    createCountDOM();
-});
+const urlSpecificJacket = baseUrl + "/" + id;
+
+async function getJacketById(url) {
+    const response = await fetch(url);
+    const product = await response.json();
+    jacket = product;
+
+    createJacketDOM(product);
+}
+
+// createJacketDOM(id);
+getJacketById(urlSpecificJacket);
+
+// Adding to Cart
