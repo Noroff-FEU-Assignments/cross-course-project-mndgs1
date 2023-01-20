@@ -29,10 +29,8 @@ function createJacketDOM(product) {
     const addToCartButton = document.querySelector(".add-to-cart");
 
     addToCartButton.addEventListener("click", (e) => {
-        let cart = getCart();
-
         if (!cart) {
-            let cart = [];
+            cart = [];
             jacket.quantity = 1;
             cart.push(jacket);
 

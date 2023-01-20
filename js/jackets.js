@@ -20,10 +20,14 @@ function createJacketsDOM(jackets) {
 }
 
 async function getJackets(url) {
-    const response = await fetch(url);
-    const products = await response.json();
+    try {
+        const response = await fetch(url);
+        const products = await response.json();
 
-    createJacketsDOM(products);
+        createJacketsDOM(products);
+    } catch {
+        Error`We could not load the API`;
+    }
 }
 
 getJackets(baseUrl);
