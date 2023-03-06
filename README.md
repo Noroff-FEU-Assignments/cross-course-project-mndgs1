@@ -1,8 +1,8 @@
-# Community Science Museum
+# Rainy Days
 
 ![image](/images/Screenshot%202023-03-06%20145716.png)
 
-Website design for Rainy Days.
+Ecommerce website Rainy Days
 
 ## Description
 
