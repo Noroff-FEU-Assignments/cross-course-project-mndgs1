@@ -6,7 +6,7 @@ Ecommerce website Rainy Days
 
 ## Description
 
-School Project for HTML/CSS/JS class. Content provided by NOROFF School of Technology.
+School 1 Semester Project. Content provided by NOROFF School of Technology.
 I had to create a design and create a Website for Jacket brand, Rainy days using CSS/HTML/JS/WordPress Rest API. Key details:
 
 -   Responsive Design
